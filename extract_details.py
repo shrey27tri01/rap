@@ -34,14 +34,13 @@ CORRECTIONS = {
 def correct_field(key, val):
     if key in ['FirstName', 'LastName']:
         return val.title()
-    elif key == 'Email':
+    if key == 'Email':
         return val.lower()
-    elif val in CORRECTIONS:
+    if val in CORRECTIONS:
         return CORRECTIONS[val]
-    else:
-        if val[0] == ':':
-            val = val[1:]
-        return re.sub(postgap, r'\g<punc> ', re.sub(pregap, r' \g<cap>', val))
+    if val[0] == ':':
+        val = val[1:]
+    return re.sub(postgap, r'\g<punc> ', re.sub(pregap, r' \g<cap>', val))
 
 
 def fill_details(wsheet, rownum, program, domain, pdf_path):
