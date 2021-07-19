@@ -160,8 +160,7 @@ def crossover(parent1, parent2, graph, population):
 def parentSelection(population, count,generation,graph):
     if(count<(generation*0.9999)):
         return parentSelectionMethod1(population)
-    else:
-        return parentSelectionMethod2(population,graph)
+    return parentSelectionMethod2(population,graph)
 
 def parentSelectionMethod1(population):
     parent1 = random.randint( 0, len(population) - 1)
