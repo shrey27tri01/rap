@@ -53,7 +53,7 @@ def get_faculty_topics(contents):
   }
   """
   # Creates a set of prof names
-  faculty = set(row[0] for row in contents)
+  faculty = {row[0] for row in contents}
 
   faculty_topics = {}
   for f in faculty:
