@@ -21,8 +21,7 @@ def make_panel_graph(contents):
         for i in range(len(row)):
             if (i == 0):
                 continue
-            else:
-                contents[row[0]].append(row[i])
+            contents[row[0]].append(row[i])
     for f in contents.keys():
         for c in contents.keys():
             G.add_edge(E.make_edge(f, 0, c), graph)

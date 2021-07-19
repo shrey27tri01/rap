@@ -117,8 +117,7 @@ def make_panel_graph(contents):
         for i in range(len(row)):
             if(i == 0):
                 continue
-            else:
-                contents[row[0]].append(row[i])
+            contents[row[0]].append(row[i])
     # contents = {
     #   "cand1": ["prof1", prof2, ....],
     #   "cand2": ["prof1", prof2, ...],
