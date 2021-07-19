@@ -106,7 +106,7 @@ def get_faculty_topics(contents):
   faculty = {row[0] for row in contents}
   faculty_topics = {}
   for f in faculty:
-    ftopics = set([row[1].lower()for row in contents if row[0] == f])
+    ftopics = {row[1].lower()for row in contents if row[0] == f}
     faculty_topics[f] = ftopics
   return faculty_topics
 ##################################################################################
