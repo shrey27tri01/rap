@@ -86,7 +86,7 @@ def copy_files(src_dir, target_dir):
 workbook_msphd = xlsxwriter.Workbook(os.path.join(collated, 'msphd_applications.xlsx'))
 workbook_mscdt = xlsxwriter.Workbook(os.path.join(collated, 'mscdt_applications.xlsx'))
 
-domains_msphd, domains_mscdt = dict(), dict()
+domains_msphd, domains_mscdt = {}, {}
 for root, dirs, files in os.walk(collated):
     for fname in files:
         print ("fname = " + root + '/' + fname)
