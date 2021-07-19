@@ -32,7 +32,7 @@ def add_unique(utopics, topic):
     if(ut.lower() == topic.lower()):
       found = True
       break
-  if(found == False):
+  if(found is False):
     utopics.append(topic)
 
 if __name__ == "__main__":

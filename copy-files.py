@@ -151,7 +151,7 @@ def match_all_applications(ft):
 
 def print_dict(d):
   for k in d:
-    if(d[k] == None):
+    if(d[k] is None):
       print(k + " : None")
     else:
       print(k + " : " + d[k])
@@ -180,7 +180,7 @@ def map_emails_app_ids():
           email_id = eid
           break
       appid_emailid[app_id] = email_id
-  no_email_appids = [aid for aid in appid_emailid if appid_emailid[aid] == None]
+  no_email_appids = [aid for aid in appid_emailid if appid_emailid[aid] is None]
   for aid in no_email_appids:
     with open(base + aid + ".txt") as fin:
       text = fin.read()
@@ -189,7 +189,7 @@ def map_emails_app_ids():
   emailid_appid = {}
   for aid in appid_emailid:
     eid = appid_emailid[aid]
-    if(eid != None):
+    if(eid is not None):
       emailid_appid[eid] = aid
   print_dict(emailid_appid)
   return emailid_appid, no_email_appids
