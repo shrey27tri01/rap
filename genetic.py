@@ -98,8 +98,8 @@ def find_key(graph, maxx):
 
 
 def run(population, graph, color):
-    temp = [k for k in range(20)]
-    col = [i for i in range(color)]
+    temp = list(range(20))
+    col = list(range(color))
     count = 0
     fitChild = len(graph)
     generation=1000
@@ -195,7 +195,7 @@ def mutate(chromosome, graph, colour):
     # data= [k for k in conflictList()]
 
     # Mutate approach two : Assign valid color to node with higher number of edges
-    data = [k for k in sorted(graph, key=lambda k: len(graph[k]), reverse=True)]
+    data = list(sorted(graph, key=lambda k: len(graph[k]), reverse=True))
     for i in data:
         check(i, graph, chromosome[i], chromosome, colour)
     return chromosome
